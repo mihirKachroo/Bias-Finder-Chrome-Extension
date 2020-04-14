@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+    "name": "Altedata",
+    "description": "Testing 123",
+    "version": "1.01",
+    "icons": {
+        "128": "images/app-128.png",
+        "64": "images/app-64.png",
+        "48": "images/app-48.png",
+        "32": "images/app-32.png",
+        "16": "images/app-16.png"
+    },
+    "browser_action": {
+        "default_icon": "images/app-128.png",
+        "default_popup": "popup.html"
+    },
+    "incognito": "split",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "<all_urls>"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": [
+        "activeTab",
+        "storage",
+        "alarms"
+    ]
+}
